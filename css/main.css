@@ -28,7 +28,7 @@ a:hover {
     width: 320px;
     left: 20px;
     background-color: rgba(0, 0, 0, 0.2);
-    font: 20px/20px Georgia;
+    font: 40px/40px Roboto, Georgia;
     padding: 15px;
 }
 
@@ -45,4 +45,15 @@ a:hover {
 
 #pageCanvas {
     position: absolute;
+}
+
+#info {
+    font-size: 35px;
+    position: absolute;
+    bottom: 5px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 3px;
+    right: 10px;
+    padding: 20px;
+
 }
