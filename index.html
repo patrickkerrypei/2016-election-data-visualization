@@ -3,21 +3,18 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>WebGL Globe</title>
-
-    <style type="text/css"></style>
     <link rel="stylesheet" type="text/css" href="/css/main.css"/>
 </head>
+
 <body>
 
-<div id="container"
-     style="color: rgb(255, 255, 255); font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 13px; line-height: 20px; font-family: Arial, sans-serif;">
-    <canvas width="1855" height="941" style="position: absolute;"></canvas>
+<div id="container">
+    <canvas id="pageCanvas" width="1855" height="941"></canvas>
 </div>
 
 <div id="title">
     2016 US Election Data
 </div>
-
 
 <script type="text/javascript" src="external/ThreeWebGL.js"></script>
 <script type="text/javascript" src="external/ThreeExtras.js"></script>
@@ -27,23 +24,28 @@
 <script type="text/javascript" src="./globe.js"></script>
 <script type="text/javascript">
 
-    var globe = DAT.Globe(document.getElementById('container'), function (label) {
-        return new THREE.Color([
+    const container = document.getElementById('container');
+
+    let globe = DAT.Globe(container, label => {
+        const colorHex = [
             0xd9d9d9, 0xb6b4b5, 0x9966cc, 0x15adff, 0x3e66a3,
             0x216288, 0xff7e7e, 0xff1f13, 0xc0120b, 0x5a1301, 0xffcc02,
             0xedb113, 0x9fce66, 0x0c9a39,
             0xfe9872, 0x7f3f98, 0xf26522, 0x2bb673, 0xd7df23,
-            0xe6b23a, 0x7ed3f7][label]);
+            0xe6b23a, 0x7ed3f7];
+        const selectedColor = new THREE.Color(colorHex[label]);
+
+        return selectedColor;
     });
 
-    $.getJSON('/data/election.json', function (electionData) {
-        var data = JSON.parse(electionData.data);
+    $.getJSON('/data/election.json', electionData => {
+        const data = JSON.parse(electionData.data);
         window.data = data;
+
         globe.addData(data, {format: 'legend'});
         globe.createPoints();
         globe.animate();
     });
-
 
 </script>
 
