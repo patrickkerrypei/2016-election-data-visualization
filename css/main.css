@@ -1,0 +1,33 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #000000 url(drawable-assets/loading.gif) center center no-repeat;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    height: 100%;
+}
+
+a {
+    color: #aaa;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#title {
+    position: absolute;
+    top: 20px;
+    width: 320px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    font: 20px/20px Georgia;
+    padding: 15px;
+}
