@@ -12,4 +12,5 @@ up client side asset handling in requiring the JSON data. This was my
 attempt to tie in Bonus 3 of "Tying in a current  or historical event such
 as coverage of the 2016 US Election or the conquests of the Ottoman Empire."
 
-### [Hosted Link](http://ec2-35-160-35-73.us-west-2.compute.amazonaws.com)
+### [Hosted Link](https://patrickpei.me/webgl/)
+### [Alternate Link](http://ec2-35-160-35-73.us-west-2.compute.amazonaws.com)
